@@ -5,15 +5,53 @@ import './App.css';
 
 const data = [
 	{
-		"field_name": "Example name",
-		"area_in_hectares": 0.1,
-		"active": true,
-		"company_name": "Company",
+		"field_name": "Potatoes",
+		"area_in_hectares": 0.3,
+		"active": false,
+		"company_name": "Potato Company",
 		"cultivation_id": 1,
 		"crop_name": "Potatoes",
 		"harvest_year": 2017
-	}
+	},
+  {
+    "field_name": "Shrimp",
+    "area_in_hectares": 1,
+    "active": true,
+    "company_name": "Shrimpcorp",
+    "cultivation_id": 3,
+    "crop_name": "Shrimp",
+    "harvest_year": 2016
+  },
+  {
+    "field_name": "Shrimp",
+    "area_in_hectares": 1,
+    "active": true,
+    "company_name": "Shrimpcorp",
+    "cultivation_id": 3,
+    "crop_name": "Shrimp",
+    "harvest_year": 2016
+  },
+  {
+    "field_name": "Shrimp",
+    "area_in_hectares": 1,
+    "active": true,
+    "company_name": "Shrimpcorp",
+    "cultivation_id": 3,
+    "crop_name": "Shrimp",
+    "harvest_year": 2016
+  },
+  {
+    "field_name": "Shrimp",
+    "area_in_hectares": 1,
+    "active": true,
+    "company_name": "Shrimpcorp",
+    "cultivation_id": 3,
+    "crop_name": "Shrimp",
+    "harvest_year": 2016
+  },
 ];
+
+
 
 const columns = [
  {
