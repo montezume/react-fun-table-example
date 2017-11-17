@@ -56,11 +56,13 @@ const data = [
 const columns = [
  {
    "attribute": "field_name",
-   "label": "Name"
+   "label": "Name",
+   sortBy: (a, b) => { console.log('a', a)}
  },
  {
    "attribute": "cultivation_id",
-   "label": "Nummer"
+   "label": "Nummer",
+   sortBy: (a, b) => { console.log('a', a)}
  },
  {
    "attribute": "company_name",
@@ -84,12 +86,45 @@ const columns = [
  }
 ];
 
+
+const defaultSorted = [
+  {
+    id: "age",
+    desc: true
+  }];
+
 class App extends Component {
+  
+  state = {
+    columns: columns, 
+    data: data,
+    sortBy: columns[0].attribute,
+    sortDirection: 1
+  }
+  
+  onSort = (attribute, sortDirection) => {
+    const sortedData = data.sort((a, b) => {
+      return sortDirection === -1 ? (a[attribute] > b[attribute]) : a[attribute] < b[attribute];
+    });
+        
+    this.setState({
+      ...this.state,
+      data: sortedData,
+      sortDirection: this.state.sortDirection == 1 ? -1 : 1
+    });
+  }
+  
+  
+  // move sort logic?
+  
   render() {
+    console.log('this.state', this.state);
+    const { sortDirection } = this.state;
+    
     return (
       <div className="App">
         <div className="main-content">
-          <Table columns={columns} data={data} />
+          <Table onSort={(column) => this.onSort(column, sortDirection)} columns={columns} data={this.state.data} />
         </div>
       </div>
     );
