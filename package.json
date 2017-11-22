@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
-    "react-scripts": "1.0.17"
+    "react-fun-table": "^1.0.0",
+    "react-scripts": "1.0.17",
+    "styled-components": "^2.2.3"
   },
   "scripts": {
     "start": "PORT=3006 react-scripts start",

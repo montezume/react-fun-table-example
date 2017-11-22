@@ -23,8 +23,8 @@ const data = [
     "harvest_year": 2016
   },
   {
-    "field_name": "Shrimp",
-    "area_in_hectares": 1,
+    "field_name": "Steak",
+    "area_in_hectares": 2,
     "active": true,
     "company_name": "Shrimpcorp",
     "cultivation_id": 3,
@@ -32,8 +32,8 @@ const data = [
     "harvest_year": 2016
   },
   {
-    "field_name": "Shrimp",
-    "area_in_hectares": 1,
+    "field_name": "Java",
+    "area_in_hectares": 5,
     "active": true,
     "company_name": "Shrimpcorp",
     "cultivation_id": 3,
@@ -41,12 +41,12 @@ const data = [
     "harvest_year": 2016
   },
   {
-    "field_name": "Shrimp",
-    "area_in_hectares": 1,
+    "field_name": "Volcanoes",
+    "area_in_hectares": 10,
     "active": true,
-    "company_name": "Shrimpcorp",
+    "company_name": "A Shrimpcorp",
     "cultivation_id": 3,
-    "crop_name": "Shrimp",
+    "crop_name": "Shrimpy",
     "harvest_year": 2016
   },
 ];
@@ -87,44 +87,45 @@ const columns = [
 ];
 
 
-const defaultSorted = [
-  {
-    id: "age",
-    desc: true
-  }];
+const defaultSorted = "field_name";
 
 class App extends Component {
-  
+
   state = {
-    columns: columns, 
+    columns: columns,
     data: data,
     sortBy: columns[0].attribute,
     sortDirection: 1
   }
-  
+
   onSort = (attribute, sortDirection) => {
     const sortedData = data.sort((a, b) => {
       return sortDirection === -1 ? (a[attribute] > b[attribute]) : a[attribute] < b[attribute];
     });
-        
+
     this.setState({
       ...this.state,
       data: sortedData,
       sortDirection: this.state.sortDirection == 1 ? -1 : 1
     });
   }
-  
-  
+
+
   // move sort logic?
-  
+
   render() {
     console.log('this.state', this.state);
     const { sortDirection } = this.state;
-    
+
     return (
       <div className="App">
         <div className="main-content">
-          <Table onSort={(column) => this.onSort(column, sortDirection)} columns={columns} data={this.state.data} />
+          <Table
+						onSort={(column) => this.onSort(column, sortDirection)}
+						columns={columns}
+						data={this.state.data}
+						sortBy={defaultSorted}
+					/>
         </div>
       </div>
     );
