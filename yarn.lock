@@ -5087,9 +5087,9 @@ react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
 
-react-fun-table@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-fun-table/-/react-fun-table-1.0.0.tgz#f57e6aa07194d64010b92c81942d0280ed2c7aa2"
+react-fun-table@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-fun-table/-/react-fun-table-1.0.2.tgz#e033ece825d31b6ca12949b7e0b10eef98d5b096"
 
 react-scripts@1.0.17:
   version "1.0.17"
