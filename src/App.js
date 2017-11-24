@@ -91,12 +91,37 @@ class App extends Component {
     return (
       <div className="App">
         <div className="main-content">
+					<h2>With one sticky column</h2>
           <Table
 						columns={columns}
 						data={data}
 						sortBy={columns[0].attribute}
 						numStickyColumns={1}
 					/>
+					<h2>With two sticky column</h2>
+					<Table
+						columns={columns}
+						data={data}
+						sortBy={columns[0].attribute}
+						numStickyColumns={2}
+					/>
+
+					<h2>With no sticky header and sticky column</h2>
+					<Table
+						columns={columns}
+						data={data}
+						sortBy={columns[0].attribute}
+						stickyHeader={false}
+					/>
+
+					<h2>Sort by third column</h2>
+					<Table
+						columns={columns}
+						data={data}
+						sortBy={columns[2].attribute}
+					/>
+
+
         </div>
       </div>
     );
