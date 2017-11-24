@@ -92,6 +92,11 @@ const GithubImg = styled.img`
 	z-index: 9999999;
 `;
 
+const SmallWrapper = styled.div`
+	margin: 0 auto;
+	width: 500px;
+`;
+
 class App extends Component {
   // move sort logic?
 
@@ -110,6 +115,17 @@ class App extends Component {
 						sortBy={columns[0].attribute}
 						numStickyColumns={1}
 					/>
+
+					<h2>In a small window</h2>
+					<SmallWrapper>
+						<Table
+							columns={columns}
+							data={data}
+							sortBy={columns[0].attribute}
+							numStickyColumns={1}
+						/>
+					</SmallWrapper>
+
 					<h2>With two sticky column</h2>
 					<Table
 						columns={columns}
